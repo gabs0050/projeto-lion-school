@@ -9,4 +9,32 @@
     <string name="favorite_course">Find your favorite course</string>
     <string name="text_description">Get to your destination faster, study at the best vocational school in Brazil. Be the best version of yourself.</string>
     <string name="get_started">Get Started</string>
+
+    <string name="courses">Courses</string>
+    <string name="ds_name">Desenvolvimento de Sistemas</string>
+    <string name="ds_description">Learn to develop web and mobile applications.</string>
+    <string name="ds_duration">3 semesters</string>
+    <string name="ds_description_long">Learn to develop web and mobile applications.</string>
+
+    <string name="rds_name">Redes de Computadores</string>
+    <string name="rds_description">Learn to design communication networks.</string>
+    <string name="rds_duration">3 semesters</string>
+    <string name="rds_description_long">Learn to design communication networks.</string>
+
+    <string name="ele_name">Eletroeletrônica</string>
+    <string name="ele_description">Learn to design communication networks.</string>
+    <string name="ele_duration">3 semesters</string>
+    <string name="ele_description_long">Learn to develop web and mobile applications.</string>
+
+    <string name="duration_icon_description">Duração do curso</string>
+    <string name="courses_icon_description">Ícone da lista de cursos</string>
+    <string name="search_icon_description">Ícone de pesquisa</string>
+    <string name="find_your_course">Find your course</string>
+    <string name="find_a_student">Find a student</string>
+    <string name="all">Todos</string>
+    <string name="studying">Cursando</string>
+    <string name="finished">Finalizado</string>
+    <string name="students_list">Students List</string>
+    <string name="student_profile_image">Student profile image</string>
+    <string name="enrollment_icon">Enrollment icon</string>
 </resources>
