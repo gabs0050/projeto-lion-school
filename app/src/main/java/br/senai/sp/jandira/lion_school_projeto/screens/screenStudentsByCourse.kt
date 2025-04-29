@@ -2,6 +2,7 @@ package br.senai.sp.jandira.lion_school_projeto.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -46,32 +48,53 @@ fun ScreenStudentsByCourse() {
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
-            .padding(16.dp)
+            .padding(14.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.lionschool),
-                contentDescription = stringResource(id = R.string.img_description),
-                modifier = Modifier.size(48.dp)
-            )
+            Row(
+                verticalAlignment = Alignment.Top,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier
+                    .width(150.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.lionschool),
+                    contentDescription = stringResource(R.string.img_description),
+                    modifier = Modifier
+                        .size(72.dp)
+                )
+                Text(
+                    text = stringResource(R.string.text_home),
+                    fontSize = 18.sp,
+                    color = Color(0xFF3347B0),
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(top = 6.dp)
+                )
+            }
             Text(
                 text = "DS",
-                color = Color.White,
+                color = Color(0xFF3347B0),
                 fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
+                fontSize = 24.sp,
                 modifier = Modifier
                     .background(
                         color = Color(0xFFF9A825),
                         shape = RoundedCornerShape(48.dp)
                     )
-                    .padding(horizontal = 8.dp, vertical = 8.dp)
+                    .padding(horizontal = 12.dp, vertical = 12.dp)
             )
         }
+
         Spacer(modifier = Modifier.height(16.dp))
+
+        Divider(color = Color(0xFFF9A825), thickness = 1.dp)
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         OutlinedTextField(
             value = "",
             onValueChange = {},
@@ -83,42 +106,61 @@ fun ScreenStudentsByCourse() {
                 unfocusedBorderColor = Color.Gray,
                 cursorColor = Color(0xFF007AFF)
             ),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, color = Color(0xFFF9A825), shape = RoundedCornerShape(8.dp))
         )
+
         Spacer(modifier = Modifier.height(16.dp))
+
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
             Button(
                 onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF3347B0))
             ) {
                 Text(text = stringResource(id = R.string.all), color = Color.White)
             }
             Button(
                 onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF9A825))
             ) {
                 Text(text = stringResource(id = R.string.studying), color = Color.White)
             }
             Button(
                 onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(8.dp),
+                shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF9A825))
             ) {
                 Text(text = stringResource(id = R.string.finished), color = Color.White)
             }
         }
+
         Spacer(modifier = Modifier.height(16.dp))
-        Text(
-            text = stringResource(id = R.string.students_list),
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold
-        )
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.chapeu_formatura),
+                contentDescription = "Ícone de Chapéu de Formatura",
+                modifier = Modifier.size(36.dp)
+            )
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(
+                text = stringResource(id = R.string.students_list),
+                style = MaterialTheme.typography.headlineSmall,
+                color = Color(0xFF3347B0),
+                fontWeight = FontWeight.Bold
+            )
+        }
+
         Spacer(modifier = Modifier.height(8.dp))
+
         LazyColumn {
             items(students) { student ->
                 Card(
@@ -166,7 +208,7 @@ fun ScreenStudentsByCourse() {
                                 Text(
                                     text = student.year.toString(),
                                     fontSize = 12.sp,
-                                    color = Color(0xFFF9A825),
+                                    color = Color(0xFF3347B0)
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
                                 Image(
